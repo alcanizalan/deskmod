@@ -1,0 +1,70 @@
+
+.main{
+    display: grid;
+    grid-template-rows: auto fit-content;
+    grid-template-columns: 1fr;
+    height: 100vh;
+
+
+    & .containerTime{
+        padding: 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+
+        & .hourAndMinutes{
+            font-size: 96px;
+            line-height: 1;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
+
+        }
+
+        & .date{
+            font-size: 24px;
+            line-height: 1;
+            font-weight: normal;
+        }
+    }
+
+    & .containerToolbar{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        padding: 10px 0;
+    }
+
+    & .desktop{
+        background-color: rgb(214, 214, 214);
+        display: flex;   
+        justify-content: center;
+        align-items: center;
+    }
+
+    & .desktopInactive{
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    & .desktopActive{
+        opacity: 1;
+        height: 100%;
+        filter: blur(0);
+        transform: scale(1);
+    }
+
+}
+
+& .mainDesktopActive{
+    grid-template-rows: auto 1fr auto;
+}
+
+& .mainDesktopInactive{
+    grid-template-rows: 1fr auto;
+}

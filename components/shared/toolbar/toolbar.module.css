@@ -1,0 +1,52 @@
+.containerToolbar{
+    background-color: lightgray;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2px;
+    width: fit-content;
+    height: fit-content;
+
+    & .containerTool{
+        background-color: none;
+        padding: 5px;
+        border-radius: 10px;
+        margin: 4px 2px;
+        position: relative;
+    }
+
+    & .backgroundToolHover{
+        height: 30%;
+        width: 30%;
+        background-color: rgba(0, 0, 0, 0.123);
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 10px;
+        opacity: 0;
+        transition: opacity 0.3s, height 0.3s, width 0.3s, filter 0.3s;
+        filter: blur(2px);
+    }
+
+    & .containerTool:hover .backgroundToolHover{
+        opacity: 1;
+        height: 100%;
+        width: 100%;
+        filter: blur(0);
+    }
+
+    & .separationToolbar{
+        width: 1px;
+        height: 20px;
+        background-color: rgba(0, 0, 0, 0.418);
+        margin: 0 5px;
+    }
+
+    & .activeTool{
+        background-color: rgba(0, 0, 0, 0.123);
+    }
+}
