@@ -10,12 +10,12 @@ import { createClient } from '@/utils/supabase/client';
 
 import { useClock } from '../lib/clock';
 
-export default async function Home(){
+export default function Home(){
     const [isDesktopActive, setIsDesktopActive] = useState(false);
     const [openedTool, setOpenedTool] = useState<string | null>(null);
     const time = useClock();
 
-    const supabase = await createClient();
+    const supabase = createClient();
     return(
       <main className={`${styles.main} ${isDesktopActive ? styles.mainDesktopActive : styles.mainDesktopInactive}`}>
           <div className={styles.containerTime}>
