@@ -45,7 +45,7 @@ export default function Toolbar({isDesktopActive, setIsDesktopActive, openedTool
                 <Image className={styles.containerToolImage} src={TextDocument} alt="Text Document" />
                 <div className={styles.backgroundToolHover}></div>
             </div>
-            <div className={`${styles.containerTool} ${openedTool === 'linksHub' ? styles.activeTool : ''}`} onClick={() => activeTool('linksHub')}>
+            <div className={`${styles.containerTool} ${openedTool === 'linkshub' ? styles.activeTool : ''}`} onClick={() => activeTool('linkshub')}>
                 <Image className={styles.containerToolImage} src={LinksHub} alt="Links Hub" />
                 <div className={styles.backgroundToolHover}></div>
             </div>

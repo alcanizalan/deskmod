@@ -5,12 +5,17 @@ import styles from './page.module.css';
 
 import Toolbar from '../components/shared/toolbar/toolbar';
 import Notes from '../components/shared/tools/notes/page';
+import LinksHub from '@/components/shared/tools/links-hub/page';
+import { createClient } from '@/utils/supabase/client';
+
 import { useClock } from '../lib/clock';
 
-export default function Home(){
+export default async function Home(){
     const [isDesktopActive, setIsDesktopActive] = useState(false);
     const [openedTool, setOpenedTool] = useState<string | null>(null);
     const time = useClock();
+
+    const supabase = await createClient();
     return(
       <main className={`${styles.main} ${isDesktopActive ? styles.mainDesktopActive : styles.mainDesktopInactive}`}>
           <div className={styles.containerTime}>
@@ -20,6 +25,7 @@ export default function Home(){
           {isDesktopActive && 
             <div className={`${styles.desktop} ${isDesktopActive ? styles.desktopActive : styles.desktopInactive}`}>
               {openedTool === 'notes' && <Notes />}
+              {openedTool === 'linkshub' && <LinksHub />}
               
             </div>
           }
